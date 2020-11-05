@@ -17,23 +17,23 @@ document
     }
     document.querySelector(".menu-bars").classList.add("active");
     document.querySelector(".nav-info").classList.add("active");
+    document.querySelector(".slidebar").classList.add("active");
   });
-document
-  .querySelector(".menu-bars")
-  .addEventListener("mouseleave", function () {
-    let char = 0;
-    let timer = setInterval(onTick, 90);
+document.querySelector(".slidebar").addEventListener("mouseleave", function () {
+  let char = 0;
+  let timer = setInterval(onTick, 90);
 
-    function onTick() {
-      bars[char].classList.remove("active");
-      char++;
-      if (char === bars.length) complete();
-      return;
-    }
-    function complete() {
-      clearInterval(timer);
-      timer = null;
-    }
-    document.querySelector(".menu-bars").classList.remove("active");
-    document.querySelector(".nav-info").classList.remove("active");
-  });
+  function onTick() {
+    bars[char].classList.remove("active");
+    char++;
+    if (char === bars.length) complete();
+    return;
+  }
+  function complete() {
+    clearInterval(timer);
+    timer = null;
+  }
+  document.querySelector(".menu-bars").classList.remove("active");
+  document.querySelector(".nav-info").classList.remove("active");
+  document.querySelector(".slidebar").classList.remove("active");
+});
